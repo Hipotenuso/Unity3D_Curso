@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     {
         jumping = false;
         myRigidbody = GetComponent<Rigidbody>();
-        currentState = new Idle(gameObject, this);
+        //currentState = new Idle(gameObject, this);
     }
 
     void Update()

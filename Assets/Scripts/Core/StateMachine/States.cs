@@ -17,11 +17,11 @@ public class States
     public STATE stateName;
     protected EVENT stage;
     protected GameObject player;
-    protected Player myPlayer;
+    protected PlayerNew myPlayer;
     protected States nextState;
     protected Animator animator;
 
-    public States(GameObject _player, Player _myPlayer)
+    public States(GameObject _player, PlayerNew _myPlayer)
     {
         player = _player;
         myPlayer = _myPlayer;
@@ -72,7 +72,7 @@ public class States
 
 public class Idle : States
 {
-    public Idle(GameObject _player, Player _myPlayer) : base(_player, _myPlayer)
+    public Idle(GameObject _player, PlayerNew _myPlayer) : base(_player, _myPlayer)
     {
         stateName = STATE.Stopped;
     }
@@ -100,7 +100,7 @@ public class Idle : States
 
 public class Moving : States
 {
-    public Moving(GameObject _player, Player _myPlayer) : base(_player, _myPlayer)
+    public Moving(GameObject _player, PlayerNew _myPlayer) : base(_player, _myPlayer)
     {
         stateName = STATE.Moving;
     }
@@ -114,7 +114,7 @@ public class Moving : States
     public override void Update()
     {
         Debug.Log("Rodando moving");
-        myPlayer.PlayerMoviment();
+        //myPlayer.PlayerMoviment();
     }
 
     public override void Exit()
