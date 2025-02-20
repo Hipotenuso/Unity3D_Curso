@@ -22,6 +22,7 @@ public class PlayerNew : MonoBehaviour
     PlayerNew playerN;
     public KeyCode keyJump = KeyCode.Space;
     public CPmanager cPmanager;
+    public Effectmanager effectmanager;
 
     
 
@@ -94,6 +95,7 @@ public class PlayerNew : MonoBehaviour
     public void Damage(healthBase h)
     {
         flashColors.ForEach(i => i.Flash());
+        effectmanager.ChangeVignette();
     }
 
     private bool _alive = true;

@@ -6,7 +6,7 @@ public class CheckPointbase : MonoBehaviour
     public MeshRenderer meshRenderer;
     public int key = 01;
     private bool checkPointActived = false;
-    private string chekcpointKey = "ChekPointKey";
+    //private string chekcpointKey = "ChekPointKey";
     private void OnTriggerEnter(Collider other)
     {
         if(!checkPointActived && other.transform.tag == "Player")
