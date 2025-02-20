@@ -2,6 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using Animation;
 using System.Collections;
+using Unity.VisualScripting;
 
 namespace Enemy
 {
@@ -18,6 +19,8 @@ namespace Enemy
         public float delayToDeath = 1.5f;
         public Ease startAnimationEase = Ease.OutBack;
         public bool startWithBornAnimation = true;
+        public bool lookAtPlayer = false;
+        private PlayerNew _playerNew;
 
         private void Awake()
         {
@@ -27,6 +30,10 @@ namespace Enemy
         protected void ResetLife()
         {
             _currentLife = startLife;
+        }
+        private void Start()
+        {
+            _playerNew = GameObject.FindAnyObjectByType<PlayerNew>();
         }
 
         protected virtual void Init()
@@ -51,6 +58,9 @@ namespace Enemy
         {
             if(flashColor != null) flashColor.Flash();
             if(_particleSystem != null) _particleSystem.Emit(3);
+
+            transform.position -= transform.forward;
+
             _currentLife -= f;
             if(_currentLife <= 0)
             {
@@ -80,11 +90,15 @@ namespace Enemy
 
         //debug
 
-        private void Update()
+        public virtual void Update()
         {
             if(Input.GetKeyDown(KeyCode.T))
             {
                 OnDamage(5f);
+            }
+            if(lookAtPlayer)
+            {
+                transform.LookAt(_playerNew.transform.position);
             }
         }
 
@@ -92,6 +106,20 @@ namespace Enemy
         {
             Debug.Log("Damage");
             OnDamage(damage);
+        }
+        public void Damage(float damage, Vector3 dir)
+        {
+            OnDamage(damage);
+            transform.DOMove(transform.position - dir, .1f);
+        }
+
+        void OnCollisionEnter(Collision collision)
+        {
+            PlayerNew p = collision.transform.GetComponent<PlayerNew>();
+            if(p != null)
+            {
+                p.Damage(1);
+            }
         }
     }
     

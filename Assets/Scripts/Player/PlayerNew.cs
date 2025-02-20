@@ -3,8 +3,10 @@ using DG.Tweening;
 using System.Collections;
 using System.Diagnostics;
 using Unity.VisualScripting;
+using System.Collections.Generic;
+using DG.Tweening.Core.Easing;
 
-public class PlayerNew : MonoBehaviour
+public class PlayerNew : MonoBehaviour, IDamageble
 {
     public float speed = 3f;
     public float speedRun = 6f;
@@ -14,25 +16,23 @@ public class PlayerNew : MonoBehaviour
     public float jumpSpeed = 10f;
     float vSpeed;
     public CharacterController characterController;
-    Animator animator;
+    public Animator animator;
     PlayerNew playerN;
-    States currentState;
     public KeyCode keyJump = KeyCode.Space;
 
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
-        currentState = new Idle(gameObject, this);
+        animator = GetComponentInChildren<Animator>();
     }
     
     [Header("Run Setup")]
     public KeyCode keyRun = KeyCode.LeftShift;
-
+    [Header("Flash")]
+    public List<FlashColor> flashColors;
     void Update()
     {
-        currentState = currentState.Process();
         PlayerNewMoviment();
     }
 
@@ -72,4 +72,15 @@ public class PlayerNew : MonoBehaviour
 
         animator.SetBool("Run", inputAxisVertical != 0);
     }
+    #region LIFE
+    public void Damage(float damage)
+    {
+        flashColors.ForEach(i => i.Flash());
+    }
+
+    public void Damage(float damage, Vector3 dir)
+    {
+        Damage(damage);
+    }
+    #endregion
 }

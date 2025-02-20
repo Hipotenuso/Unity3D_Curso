@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     public float jumpDuration;
     float currentSpeed;
     private bool jumping;
-    States currentState;
     public Rigidbody myRigidbody;
     Animator animator;
     Player player;
@@ -25,7 +24,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        currentState = currentState.Process();
     }
 
     public void PlayerMoviment()
