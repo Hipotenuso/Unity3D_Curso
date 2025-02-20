@@ -118,7 +118,7 @@ namespace Enemy
             PlayerNew p = collision.transform.GetComponent<PlayerNew>();
             if(p != null)
             {
-                p.Damage(1);
+                p.healthBase.Damage(1);
             }
         }
     }
