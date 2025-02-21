@@ -27,7 +27,6 @@ public class StaffBase : MonoBehaviour
         projectile.transform.position = positionToShoot.position;
         projectile.transform.rotation = positionToShoot.rotation;
         projectile.speed = speed;
-        Debug.Log("disparo efetuado");
     }
 
     public void StartShooting()

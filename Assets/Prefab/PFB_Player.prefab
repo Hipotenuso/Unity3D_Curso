@@ -1332,6 +1332,7 @@ GameObject:
   - component: {fileID: 835674097203001612}
   - component: {fileID: 5691428350021454870}
   - component: {fileID: 5116298004812096472}
+  - component: {fileID: 1013107323548252666}
   m_Layer: 0
   m_Name: PFB_Player
   m_TagString: Player
@@ -1422,13 +1423,19 @@ MonoBehaviour:
   turnSpeed: 200
   gravity: 9.8
   jumpSpeed: 10
+  colliders:
+  - {fileID: 508875117756553772}
+  - {fileID: 5691428350021454870}
   characterController: {fileID: 5691428350021454870}
   animator: {fileID: 0}
   keyJump: 32
+  cPmanager: {fileID: 0}
+  effectmanager: {fileID: 0}
   keyRun: 304
   flashColors:
   - {fileID: 3139002880848774143}
   - {fileID: 3847531679994117022}
+  healthBase: {fileID: 1013107323548252666}
 --- !u!143 &5691428350021454870
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1470,6 +1477,22 @@ MonoBehaviour:
   gun2: {fileID: 9002367581139642335, guid: e4bcc6c1c0212474b8bc5acd4b76500a, type: 3}
   gunPosition: {fileID: 4692708023363917306}
   _currentGun: {fileID: 0}
+--- !u!114 &1013107323548252666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4849510273021203858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295a7cedcf0744c45b79ed8227aae888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startLife: 20
+  destroyOnKill: 0
+  _currentLife: 0
+  uiGunUpdater: {fileID: 0}
 --- !u!1 &4956175411768059335
 GameObject:
   m_ObjectHideFlags: 0

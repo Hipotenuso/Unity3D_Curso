@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class healthBase : MonoBehaviour, IDamageble
 {
-    public float startLife = 10f;
+    public float startLife;
     public bool destroyOnKill = false;
     [SerializeField] private float _currentLife;
     public UIGunUpdater uiGunUpdater;
@@ -23,6 +23,8 @@ public class healthBase : MonoBehaviour, IDamageble
     public void ResetLife()
     {
         _currentLife = startLife;
+        Debug.Log("vida startada");
+        UpdateUI();
     }
 
     protected virtual void Kill()
