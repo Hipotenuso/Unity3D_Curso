@@ -4,16 +4,24 @@ namespace Itens
 {
     public class ItemCSoul : ItemCBase
     {
+        public Collider _collider;
 
         void Awake()
         {
             itemManager = FindAnyObjectByType<ItemManager>();
-            _collider = GetComponent<Collider>();
+            if(_collider == null)
+            {
+                _collider = GetComponent<Collider>();
+            }
+        }
+
+        void Start()
+        {
+            _collider.enabled = true;
         }
         protected override void Collect()
         {
             base.Collect();
-            itemManager.AddByType(ItemType.Coin);
             _collider.enabled = false;
         }
     }

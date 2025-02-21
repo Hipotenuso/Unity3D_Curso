@@ -53,6 +53,7 @@ MonoBehaviour:
   damageAmount: 2
   tagsToHit:
   - Enemy
+  - Scenario
 --- !u!54 &7581831043470920520
 Rigidbody:
   m_ObjectHideFlags: 0

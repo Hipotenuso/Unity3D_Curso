@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8987952396942048519}
   - component: {fileID: 6298745091811108694}
-  - component: {fileID: 5176194785652923802}
+  - component: {fileID: 8608022498989499850}
   m_Layer: 0
   m_Name: PFB_Coin
   m_TagString: Untagged
@@ -55,7 +55,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5176194785652923802
+--- !u!114 &8608022498989499850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7908851391152140992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae020c2b711b8ea488af8d512e5b1be5, type: 3}
+  m_Script: {fileID: 11500000, guid: c83b15c89c2664c45986aec582525059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
@@ -125,7 +125,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 320013e4a539592499129bf81c319566, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 02649bcd85578274994a8fab9c5705d3, type: 2}
+      objectReference: {fileID: 2100000, guid: c804de050ba97b542ae5de48098fab25, type: 2}
     - target: {fileID: 919132149155446097, guid: 320013e4a539592499129bf81c319566, type: 3}
       propertyPath: m_Name
       value: MDL_Coin

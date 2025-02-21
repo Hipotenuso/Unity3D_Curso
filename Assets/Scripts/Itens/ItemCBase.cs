@@ -7,7 +7,7 @@ namespace Itens
     {
         public ItemType itemType;
         public Animator animator;
-        public Collider _collider;
+        
         public ItemManager itemManager;
         public string compareTag = "Tag";
         public float delayToDesapear;
@@ -21,10 +21,7 @@ namespace Itens
             {
                 itemManager = FindAnyObjectByType<ItemManager>();
             }
-            if(_collider == null)
-            {
-                _collider = GetComponent<Collider>();
-            }
+            
         }
 
         private void OnTriggerEnter(Collider collision)
@@ -32,7 +29,7 @@ namespace Itens
             if(collision.transform.CompareTag(compareTag))
             {
                 Collect();
-                _collider.enabled = false;
+                
             }
         }
         protected virtual void Collect()

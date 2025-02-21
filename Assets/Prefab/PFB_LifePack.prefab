@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8987952396942048519}
   - component: {fileID: 6298745091811108694}
-  - component: {fileID: 2564432045702442117}
+  - component: {fileID: -1858113161811955775}
   m_Layer: 0
   m_Name: PFB_LifePack
   m_TagString: Untagged
@@ -55,7 +55,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2564432045702442117
+--- !u!114 &-1858113161811955775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,16 +64,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7908851391152140992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae020c2b711b8ea488af8d512e5b1be5, type: 3}
+  m_Script: {fileID: 11500000, guid: c83b15c89c2664c45986aec582525059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
   animator: {fileID: 0}
-  _collider: {fileID: 0}
   itemManager: {fileID: 0}
   compareTag: Player
   delayToDesapear: 0
   audioSource: {fileID: 0}
+  _collider: {fileID: 0}
 --- !u!1001 &7701432007891856294
 PrefabInstance:
   m_ObjectHideFlags: 0
